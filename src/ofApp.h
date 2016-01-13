@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofxiOS.h"
-#include "dlib/opencv.h"
+#include "ofxFaceTracker.h"
 
 class ofApp : public ofxiOSApp {
 public:
@@ -23,5 +23,10 @@ public:
   
 private:
   ofVideoGrabber camera;
-
+  ofxFaceTracker tracker;
+  dispatch_queue_s* main_queue;
+  dispatch_queue_s* background_queue;
+  bool finish;
 };
+
+
